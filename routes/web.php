@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicController@home');
+
+// Public Area
+
+
+
+// Admin Area
 
 $admin_uri = 'kameng';
-
 Route::get($admin_uri . '/home', function(){
     return view('backend.home');
 });
