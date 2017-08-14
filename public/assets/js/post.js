@@ -1,0 +1,4 @@
+
+$(function(){
+    $('#post-table').bootstrapTable();
+});
