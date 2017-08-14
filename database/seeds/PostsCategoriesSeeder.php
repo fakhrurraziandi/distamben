@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class PostsCategoriesSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('posts_categories')->insert([
+            [
+                'post_id' => 1,
+                'category_id' => 1,
+            ],
+            [
+                'post_id' => 2,
+                'category_id' => 1,
+            ],
+            [
+                'post_id' => 3,
+                'category_id' => 1,
+            ],
+            [
+                'post_id' => 2,
+                'category_id' => 2,
+            ],
+            [
+                'post_id' => 1,
+                'category_id' => 3,
+            ],
+        ]);
+    }
+}
