@@ -27,16 +27,7 @@
             </div>
           </div>
           <div class="box-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Test</th>
-                        <th>Test</th>
-                        <th>Test</th>
-                        <th>Test</th>
-                    </tr>
-                </thead>
-            </table>
+            <table class="post-table"></table>
           </div>
           <!-- /.box-body -->
           <div class="box-footer">

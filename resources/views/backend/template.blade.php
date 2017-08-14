@@ -9,6 +9,8 @@
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="{{ URL::asset('bower_components/AdminLTE/bootstrap/css/bootstrap.min.css') }}">
 
+  <link rel="stylesheet" href="{{ URL::asset('bower_components/bootstrap-table/dist/bootstrap-table.min.css') }}">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -403,6 +405,8 @@
 <script src="{{ URL::asset('bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ URL::asset('bower_components/AdminLTE/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- Bootstrap Table -->
+<script src="{{ URL::asset('bower_components/bootstrap-table/dist/bootstrap-table.min.js') }}"></script>
 <!-- SlimScroll -->
 <script src="{{ URL::asset('bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
