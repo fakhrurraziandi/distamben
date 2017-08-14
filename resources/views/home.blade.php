@@ -49,9 +49,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         @for ($i=0; $i < $categories->count(); $i++)
-
                             <div role="tabpanel" class="tab-pane @if($i == 0) active @endif " id="{{ $categories[$i]->slug }}">
-
                                 @forelse ($categories[$i]->posts as $post)
                                     <div class="media">
                                         <div class="media-left">
@@ -69,11 +67,8 @@
                                 @empty
                                     <p>Belum ada berita pada category ini.</p>
                                 @endforelse
-
                             </div>
                         @endfor
-
-
                     </div>
 
 
