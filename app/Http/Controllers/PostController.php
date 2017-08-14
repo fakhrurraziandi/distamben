@@ -13,8 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = \App\Post::find(1);
-        return $post->category->title;
+        return view('backend.post.index');
     }
 
     /**

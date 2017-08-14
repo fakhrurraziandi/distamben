@@ -17,5 +17,9 @@ Route::get('/', function () {
 
 $admin_uri = 'kameng';
 
+Route::get($admin_uri . '/home', function(){
+    return view('backend.home');
+});
+
 Route::resource($admin_uri . '/post', 'PostController');
 Route::resource($admin_uri . '/category', 'CategoryController');
