@@ -13,8 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = \App\Category::find(1);
-        return $category->posts;
+        return view('backend.category');
     }
 
     /**
