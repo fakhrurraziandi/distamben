@@ -24,5 +24,8 @@ Route::get($admin_uri . '/home', function(){
     return view('backend.home');
 });
 
+
 Route::resource($admin_uri . '/post', 'PostController');
+
+Route::get($admin_uri . '/category/json', 'CategoryController@json')->name('category.json');
 Route::resource($admin_uri . '/category', 'CategoryController');
