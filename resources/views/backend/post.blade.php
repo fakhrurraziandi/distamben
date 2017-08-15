@@ -42,4 +42,6 @@
     </div>
     <!-- /.content-wrapper -->
 
+    <script src="{{ URL::asset('assets/js/post.js') }}" charset="utf-8"></script>
+
 @endsection
