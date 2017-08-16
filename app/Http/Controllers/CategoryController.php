@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Category;
+use Validator;
 
 class CategoryController extends Controller
 {
@@ -91,7 +92,29 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $result = [];
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'slug' => 'required'
+        ]);
+
+        if($validator->fails()){
+            $result['status'] = 'error';
+			$result['messages'] = $validator->getMessageBag()->getMessages();
+        }else{
+            $category = new Category();
+            $category->title = $request->title;
+            $category->slug = $request->slug;
+            if($category->save()){
+                $result['status'] = 'success';
+            }else{
+                $result['status'] = 'error';
+            }
+        }
+
+        return $result;
     }
 
     /**

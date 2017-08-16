@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>AdminLTE 2 | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -21,6 +22,8 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ URL::asset('bower_components/AdminLTE/dist/css/skins/_all-skins.min.css') }}">
 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -30,6 +33,7 @@
 
   <!-- jQuery 2.2.3 -->
   <script src="{{ URL::asset('bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/js/main.js') }}"></script>
 </head>
 <body class="hold-transition skin-yellow sidebar-mini">
 <!-- Site wrapper -->
@@ -288,5 +292,7 @@
 <script src="{{ URL::asset('bower_components/AdminLTE/dist/js/app.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('bower_components/AdminLTE/dist/js/demo.js') }}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" charset="utf-8"></script>
 </body>
 </html>
