@@ -71,5 +71,50 @@ $('#form-add-category').on('submit', function(e){
 
 $(document).on('click', '.btn-edit-category', function(e){
     e.preventDefault();
-    $('#modal-edit-category').modal('show');
+    var id = $(this).data('id');
+    var form = $('#form-edit-category');
+    $.ajax({
+        url: base_url('kameng/category/find'),
+        type: 'GET',
+        data: {id: id},
+        success: function(result){
+            if($.isEmptyObject(result) === false){
+                $.each(result, function(key, value){
+                    form.find('#' + key).val(value);
+                });
+                $('#modal-edit-category').modal('show');
+            }
+        }
+    });
+});
+
+$('#form-edit-category').on('submit', function(e){
+    e.preventDefault();
+    var form = $(this);
+    var id = form.find('#id').val();
+    var form_data = form.serialize();
+    form_data += '&_method=PUT';
+
+    $.ajax({
+        url: base_url('kameng/category/' + id),
+        type: 'POST',
+        data: form_data,
+        success: function(result){
+
+            if(result.status == 'success'){
+
+                toastr.success('Category has been successfully updated', 'Success');
+                $('#modal-edit-category').modal('hide');
+                $('#table-category').bootstrapTable('refresh');
+                form.trigger('reset');
+            }else{
+                $.each(result.messages, function(key, value){
+                    value.forEach(function(message){
+                        // console.log(message);
+                        form.find('#' + key).after(`<p class="help-block">${value}</p>`).parent().addClass('has-error');
+                    });
+                });
+            }
+        }
+    });
 });

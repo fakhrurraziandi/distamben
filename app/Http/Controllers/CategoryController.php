@@ -64,6 +64,13 @@ class CategoryController extends Controller
         $result['rows'] = $category->get();
         return $result;
     }
+
+    public function find(Request $request)
+    {
+        $category = Category::find($request->id);
+        return $category;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -148,7 +155,30 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $result = [];
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'slug' => 'required'
+        ]);
+
+        if($validator->fails()){
+            $result['status'] = 'error';
+			$result['messages'] = $validator->getMessageBag()->getMessages();
+        }else{
+
+            $category = Category::find($id);
+            $category->title = $request->title;
+            $category->slug = $request->slug;
+
+            if($category->save()){
+                $result['status'] = 'success';
+            }else{
+                $result['status'] = 'error';
+            }
+        }
+
+        return $result;
     }
 
     /**
