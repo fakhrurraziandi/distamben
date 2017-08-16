@@ -67,7 +67,7 @@
             <div class="modal-content">
                 <form id="form-edit-category">
 
-                    <input type="hidden" name="id" id="id"> 
+                    <input type="hidden" name="id" id="id">
 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -90,6 +90,33 @@
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
 
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-delete-category" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="form-delete-category">
+
+                    <input type="hidden" name="id" id="id">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Delete Category</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete <span style="font-weight: bolder;" id="identifier">the</span> category data?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
                 </form>
 
             </div>

@@ -189,6 +189,14 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = [];
+        $category = Category::find($id);
+        if($category->delete()){
+            $result['status'] = 'success';
+        }else{
+            $result['status'] = 'error';
+        }
+
+        return $result;
     }
 }
