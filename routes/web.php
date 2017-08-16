@@ -25,6 +25,8 @@ Route::get($admin_uri . '/home', function(){
 });
 
 
+Route::get($admin_uri . '/post/json', 'PostController@json')->name('post.json');
+Route::get($admin_uri . '/post/find', 'PostController@find')->name('post.find');
 Route::resource($admin_uri . '/post', 'PostController');
 
 Route::get($admin_uri . '/category/json', 'CategoryController@json')->name('category.json');

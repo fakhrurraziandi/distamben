@@ -222,6 +222,7 @@
 
         <li><a href="../../documentation/index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="{{ URL::route('category.index') }}"><i class="fa fa-th-large"></i> <span>Category</span></a></li>
+        <li><a href="{{ URL::route('post.index') }}"><i class="fa fa-newspaper-o"></i> <span>Post</span></a></li>
 
         <li class="treeview">
           <a href="#">
